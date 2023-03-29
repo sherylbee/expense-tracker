@@ -31,11 +31,11 @@
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background-color: #27142f;
-    border: none;
+    background-color: #2a2a2a;
+    border: 1px solid white;
     padding: 0.5rem;
     border-radius: 12px;
-    box-shadow: 3px 3px 5px -3px #bf3fe1c9;
+    /* box-shadow: 3px 3px 5px -3px #bf3fe1c9; */
   }
   
   @media (min-width: 580px) {
