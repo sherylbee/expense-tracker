@@ -1,4 +1,3 @@
-import React from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from './ExpenseDate';
 
@@ -15,7 +14,5 @@ function ExpenseItem({title, date, amount}) {
     );
  
 }
-
-
 
 export default ExpenseItem;
