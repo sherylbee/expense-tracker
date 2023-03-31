@@ -11,6 +11,9 @@
     margin-bottom: 0.5rem;
     display: block;
   }
+  .new-expense__control  {
+    flex-basis: 48%;
+  }
   
   .new-expense__control input {
     font: inherit;
