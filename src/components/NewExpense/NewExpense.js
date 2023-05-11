@@ -3,11 +3,7 @@ import './NewExpense.css';
 import ExpenseForm from './ExpenseForm';
 
 const NewExpense = (props) =>{
-    const submitExpenseHandler = (val)=>{
-        const expenseData = {
-            ...val,
-            key: Math.random() * 10000
-        }
+    const submitExpenseHandler = (expenseData)=>{
         props.onAddExpense(expenseData)
     }
     return ( 

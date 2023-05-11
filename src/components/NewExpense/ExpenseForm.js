@@ -22,7 +22,8 @@ const ExpenseForm = (props) => {
         let expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
-            date: new Date(enteredDate)
+            date: new Date(enteredDate),
+            id: Math.random() * 10000
         }
         // console.log(expenseData)
         props.onSubmitExpense(expenseData)

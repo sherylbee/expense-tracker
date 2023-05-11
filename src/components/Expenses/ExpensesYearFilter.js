@@ -1,21 +1,19 @@
 import React from "react";
-import './ExpensesYearFilter.css';
+import "./ExpensesYearFilter.css";
 
 function ExpensesYearFilter(props) {
-//   const [selectedYear, updateSelectedYear] = useState("");
   const selectedYearChangeHandler = (e) => {
-    console.log(e.target.value)
-    // updateSelectedYear(e.target.value);
-    props.onYearSelect(e.target.value)
+    let filteredExpenses = props.expenseList.filter(expense=>expense.date.getFullYear() === Number(e.target.value))
+    props.onReturnFilteredExpenses(filteredExpenses);
   };
   return (
     <div id="expenses-year-select">
-       
       <label htmlFor="expenses-year-filter">Choose a year: </label>
       <select
         name="filter"
         id="expenses-year-filter"
-        onChange={selectedYearChangeHandler}>
+        onChange={selectedYearChangeHandler}
+      >
         <option value="2019">2019</option>
         <option value="2020">2020</option>
         <option value="2021">2021</option>
