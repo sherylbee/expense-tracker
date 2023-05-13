@@ -1,0 +1,11 @@
+.toggle-new-expense{
+    max-width: 56%;
+    min-height: 4em;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.toggle-new-expense-btn{
+    align-self: center;
+    min-height: 2em;
+}

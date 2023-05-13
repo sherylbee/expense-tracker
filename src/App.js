@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
+import NewExpenseToggle from './components/NewExpense/NewExpenseToggle'
 
 function App() {
   const expenses = [
@@ -30,15 +31,23 @@ function App() {
     },
   ];
   const [expensesList, updateExpenses] = useState(expenses);
-   const addExpenseHandler = (expenseEntry)=>{
-      updateExpenses(prev=>[...prev, expenseEntry])
-      console.log(expensesList)
-   }
+  const [showNewExpense, updateShowNewExpense] = useState(false);
+  const addExpenseHandler = (expenseEntry)=>{
+    updateExpenses(prev=>[...prev, expenseEntry])
+    console.log(expensesList)
+  }
+  // const toggleNewExpense = (isHidden) =>{
+
+  // }
 
 
   return (
     <div>
+    { 
+      showNewExpense &&
       <NewExpense onAddExpense={addExpenseHandler}/>
+    }
+      <NewExpenseToggle onToggleExpenseForm={updateShowNewExpense}/>
       <Expenses expenses={expensesList}/>
     </div>
   );
