@@ -10,6 +10,15 @@ html {
 
 body {
   margin: 0;
-  background-color: #655c66;
+  background-color:var(--brown-sugar);
+}
+
+/* CSS HEX */
+:root{
+  --brown-sugar: #b07156ff;
+  --china-rose: #ab4e68ff;
+  --eggplant: #533745ff;
+  --khaki: #9d9171ff;
+  --lion: #c4a287ff;
 }
 

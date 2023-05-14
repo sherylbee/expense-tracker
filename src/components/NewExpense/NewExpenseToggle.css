@@ -8,4 +8,21 @@
 .toggle-new-expense-btn{
     align-self: center;
     min-height: 2em;
+    border-radius: 12px;
+    padding: 1rem 1rem;
+    font: inherit;
+    margin-right: 0rem;
+    background-color: var(--lion);
+    color: var(--eggplant);
+    border: 1px solid;
+    /* font-weight: 800; */
+    cursor: pointer;
+}
+
+.toggle-new-expense-btn:hover, .toggle-new-expense-btn:active {
+    background-color: var(--eggplant);
+    /* border-color: var(--china-rose); */
+    color: white;
+    font-weight: 100;
+    border: none;
 }

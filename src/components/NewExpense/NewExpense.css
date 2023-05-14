@@ -1,5 +1,6 @@
+@import "../../index.css";
 .new-expense {
-    background-color: #a892ee;
+    background-color: var(--eggplant);
     padding: 1rem;
     margin: 2rem auto;
     width: 50rem;
@@ -13,8 +14,8 @@
     font: inherit;
     cursor: pointer;
     padding: 1rem 2rem;
-    border: 1px solid #40005d;
-    background-color: #40005d;
+    border: 1px solid var(--china-rose);
+    background-color: var(--china-rose);
     color: white;
     border-radius: 12px;
     margin-right: 1rem;
@@ -22,8 +23,9 @@
   
   .new-expense button:hover,
   .new-expense button:active {
-    background-color: #510674;
-    border-color: #510674;
+    background-color: var(--lion);
+    border-color: var(--eggplant);
+    color: var(--eggplant);
   }
   
   .new-expense button.alternative {
@@ -35,4 +37,8 @@
   .new-expense button.alternative:hover,
   .new-expense button.alternative:active {
     background-color: #ddb3f8;
+  }
+
+  .new-expense__control label{
+    color: var(--china-rose);
   }

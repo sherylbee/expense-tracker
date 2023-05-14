@@ -3,8 +3,8 @@ import "./ExpensesYearFilter.css";
 
 function ExpensesYearFilter(props) {
   const selectedYearChangeHandler = (e) => {
-    let filteredExpenses = props.expenseList.filter(expense=>expense.date.getFullYear() === Number(e.target.value))
-    props.onReturnFilteredExpenses(filteredExpenses);
+    //returning selected filter to parent component
+    props.onFilter(Number(e.target.value));
   };
   return (
     <div id="expenses-year-select">
@@ -18,6 +18,7 @@ function ExpensesYearFilter(props) {
         <option value="2020">2020</option>
         <option value="2021">2021</option>
         <option value="2022">2022</option>
+        <option value="2022">2023</option>
       </select>
     </div>
   );

@@ -36,9 +36,6 @@ function App() {
     updateExpenses(prev=>[...prev, expenseEntry])
     console.log(expensesList)
   }
-  // const toggleNewExpense = (isHidden) =>{
-
-  // }
 
 
   return (
@@ -48,7 +45,7 @@ function App() {
       <NewExpense onAddExpense={addExpenseHandler}/>
     }
       <NewExpenseToggle onToggleExpenseForm={updateShowNewExpense}/>
-      <Expenses expenses={expensesList}/>
+      <Expenses expenses={expensesList} onUpdateExpenses={updateExpenses}/>
     </div>
   );
 }
