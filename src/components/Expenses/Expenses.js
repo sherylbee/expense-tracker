@@ -11,7 +11,7 @@ function Expenses(props){
         let filteredExpenses = props.expenses.filter(expense => expense.date.getFullYear() === filter)
         updateExpenses(filteredExpenses)
     }
-
+    
     //updating expenses on change to props est in parent (new expense) vs new state received from child (filtered expense)
     React.useEffect(() => {
         updateExpenses(props.expenses);

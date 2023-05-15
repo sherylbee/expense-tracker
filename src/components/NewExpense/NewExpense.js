@@ -6,9 +6,12 @@ const NewExpense = (props) =>{
     const submitExpenseHandler = (expenseData)=>{
         props.onAddExpense(expenseData)
     }
+    function show(showExpenseForm){
+        props.showExpenseForm(showExpenseForm)
+    }
     return ( 
         <div className='new-expense'>
-            <ExpenseForm onSubmitExpense={submitExpenseHandler}/> 
+            <ExpenseForm onSubmitExpense={submitExpenseHandler} showExpenseForm={show}/> 
         </div>
     )
 }

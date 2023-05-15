@@ -31,21 +31,23 @@ function App() {
     },
   ];
   const [expensesList, updateExpenses] = useState(expenses);
-  const [showNewExpense, updateShowNewExpense] = useState(false);
+  const [showNewExpense, updateShowNewExpense] = useState(true);
   const addExpenseHandler = (expenseEntry)=>{
     updateExpenses(prev=>[...prev, expenseEntry])
     console.log(expensesList)
   }
-
+  const show = (showExpenseForm)=>{
+    updateShowNewExpense(showExpenseForm)
+  }
 
   return (
     <div>
     { 
       showNewExpense &&
-      <NewExpense onAddExpense={addExpenseHandler}/>
+      <NewExpense onAddExpense={addExpenseHandler} showExpenseForm={show}/>
     }
-      <NewExpenseToggle onToggleExpenseForm={updateShowNewExpense}/>
-      <Expenses expenses={expensesList} onUpdateExpenses={updateExpenses}/>
+      <NewExpenseToggle onToggleExpenseForm={updateShowNewExpense} showAddExpense={showNewExpense}/>
+      <Expenses expenses={expensesList} onUpdateExpenses={updateExpenses} />
     </div>
   );
 }
