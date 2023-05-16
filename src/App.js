@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 import NewExpenseToggle from './components/NewExpense/NewExpenseToggle'
+import Chart from './components/Chart/Chart';
 
 function App() {
   const expenses = [
@@ -42,6 +43,8 @@ function App() {
 
   return (
     <div>
+    <h1 id='page-title'>Expense Tracker</h1>
+    <Chart expenses={expensesList}/>
     { 
       showNewExpense &&
       <NewExpense onAddExpense={addExpenseHandler} showExpenseForm={show}/>

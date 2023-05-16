@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import './NewExpenseToggle.css'
+import './styles/NewExpenseToggle.css'
 
 const NewExpenseToggle = (props) =>{
     const [showNewExpense, toggleShowNewExpense] = useState(true);

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import ExpenseItem from './ExpenseItem';
-import './Expenses.css';
+import './styles/Expenses.css';
 import Card from '../UI/Card';
 import ExpensesYearFilter from './ExpensesYearFilter'
 
@@ -8,14 +8,15 @@ function Expenses(props){
    
     const [expenses, updateExpenses] = useState(props.expenses)
     const filterExpenses = (filter)=>{
-        let filteredExpenses = props.expenses.filter(expense => expense.date.getFullYear() === filter)
+        let filteredExpenses = filter !=="All"? props.expenses.filter(expense => expense.date.getFullYear() === Number(filter)): props.expenses;
         updateExpenses(filteredExpenses)
     }
     
-    //updating expenses on change to props est in parent (new expense) vs new state received from child (filtered expense)
+    //updating expenses on change to props est. in parent (new expense) vs new state received from child (filtered expense)
     React.useEffect(() => {
         updateExpenses(props.expenses);
-    }, [props.expenses])
+    }, [props.expenses]);
+
     let expenseList = expenses.map(expense =>
         <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} key={expense.id}/>
     )

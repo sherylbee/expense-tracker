@@ -1,10 +1,10 @@
 import React from "react";
-import "./ExpensesYearFilter.css";
+import "./styles/ExpensesYearFilter.css";
 
 function ExpensesYearFilter(props) {
   const selectedYearChangeHandler = (e) => {
     //returning selected filter to parent component
-    props.onFilter(Number(e.target.value));
+    props.onFilter(e.target.value);
   };
   return (
     <div id="expenses-year-select">
@@ -14,11 +14,12 @@ function ExpensesYearFilter(props) {
         id="expenses-year-filter"
         onChange={selectedYearChangeHandler}
       >
+        <option value="All">All</option>
         <option value="2019">2019</option>
         <option value="2020">2020</option>
         <option value="2021">2021</option>
         <option value="2022">2022</option>
-        <option value="2022">2023</option>
+        <option value="2023">2023</option>
       </select>
     </div>
   );

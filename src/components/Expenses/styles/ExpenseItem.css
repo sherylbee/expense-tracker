@@ -11,11 +11,11 @@
   
   .expense-item__description {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin: 1em;
     gap: 1rem;
-    align-items: flex-end;
     flex-flow: column-reverse;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex: 1;
   }
   
@@ -26,23 +26,55 @@
     margin: 0 1rem;
     color: white;
   }
+
+  #expense-item__price-component{
+    display: flex;
+    flex-direction: column;
+   }
   
   .expense-item__price {
-    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
     font-weight: bold;
-    color: white;
-    background-color: #2a2a2a;
-    border: 1px solid white;
+    /* min-height: 5.5rem; */
+    background-color: var(--lion);
     padding: 0.5rem;
     border-radius: 12px;
     /* box-shadow: 3px 3px 5px -3px #bf3fe1c9; */
+    min-width: 6em;
+    text-align: center;
   }
-  
+  .expense-item__price div, input {
+    text-align: center;
+    width: 8em;
+    background: wheat;
+    border: none;
+    color: var(--eggplant);
+    font-family: 'Noto Sans JP';
+    max-height: 2em;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 0;
+  }
+
+   .expense-item__price button {
+    color: antiquewhite;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 2em;
+  }
+
+
+  .expense-item__price button:hover{
+    filter: brightness(108%);
+  }
+
   @media (min-width: 580px) {
     .expense-item__description {
       flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
+      /* justify-content: flex-start; */
       flex: 1;
     }
   

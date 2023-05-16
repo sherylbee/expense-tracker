@@ -1,0 +1,28 @@
+.expense-chart{
+    max-width: 55%;
+    margin: auto;
+    min-height: 22em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+}
+.expenses-chart__title{
+    padding: 0.2em 0.8em;
+}
+.bar-container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 18em;
+    min-width: 100%;
+    text-align: center;
+}
+.chart-bar__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.chart-bar{
+    background: var(--lion);
+    border: 2px solid;
+    border-bottom: none;
+}
