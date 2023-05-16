@@ -4,7 +4,7 @@ import "./styles/ExpenseItem.css";
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
-function ExpenseItem({title, date, amount}) {
+function ExpenseItem({title, date, amount, editAmountCb}) {
     let editAmount = false;
     const [expenseTitle, updateExpenseTitle] = useState(title);
     const [currentAmount, updateAmount] = useState(amount);
@@ -19,6 +19,7 @@ function ExpenseItem({title, date, amount}) {
     const handleUpdateAmount = (e) =>{
         updateAmount(e.target.value)
         updateEditAmount(false);
+        editAmountCb(e.target.value)
     }
     return (
         <Card className="expense-item">

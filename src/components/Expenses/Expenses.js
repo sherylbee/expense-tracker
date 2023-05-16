@@ -16,9 +16,9 @@ function Expenses(props){
     React.useEffect(() => {
         updateExpenses(props.expenses);
     }, [props.expenses]);
-
+//spb TODO: come back and finish this -- consider cloning the original array on cb
     let expenseList = expenses.map(expense =>
-        <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} key={expense.id}/>
+        <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} editAmountCb={editAmountCb} key={expense.id}/>
     )
 
     let expenseContent;
