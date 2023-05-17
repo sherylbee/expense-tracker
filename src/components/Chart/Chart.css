@@ -5,6 +5,9 @@
     margin-bottom: 1em;
     display: flex;
     align-items: center;
+    background: var(--dusty-rose);
+    color: var(--eggplant);
+    font-weight: bold;
 }
 .expenses-chart__title{
     padding: 0.2em 0.8em;
@@ -15,6 +18,7 @@
     height: 18em;
     min-width: 100%;
     text-align: center;
+    padding: 0 1em;
 }
 .chart-bar__wrapper{
     display: flex;
