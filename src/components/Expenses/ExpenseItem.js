@@ -19,7 +19,7 @@ function ExpenseItem({title, date, amount, editAmountCb}) {
     const handleUpdateAmount = (e) =>{
         updateAmount(e.target.value)
         updateEditAmount(false);
-        editAmountCb(e.target.value)
+        editAmountCb(e.target.value)//spb TODO: come back and finish this functionality later -- need to lift this state back up to bind it to the corresponding expense state.; also consider changing the expense view -- i.e. option to condense months of a year into a single bar with expsenses summed
     }
     return (
         <Card className="expense-item">
