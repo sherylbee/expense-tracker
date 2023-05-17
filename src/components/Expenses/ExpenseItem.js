@@ -4,7 +4,7 @@ import "./styles/ExpenseItem.css";
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
-function ExpenseItem({title, date, amount}) {
+function ExpenseItem({title, date, amount, editAmountCb}) {
     let editAmount = false;
     const [expenseTitle, updateExpenseTitle] = useState(title);
     const [currentAmount, updateAmount] = useState(amount);
@@ -19,6 +19,7 @@ function ExpenseItem({title, date, amount}) {
     const handleUpdateAmount = (e) =>{
         updateAmount(e.target.value)
         updateEditAmount(false);
+        editAmountCb(e.target.value)//spb TODO: come back and finish this functionality later -- need to lift this state back up to bind it to the corresponding expense state.; also consider changing the expense view -- i.e. option to condense months of a year into a single bar with expsenses summed
     }
     return (
         <Card className="expense-item">

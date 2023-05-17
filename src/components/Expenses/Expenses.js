@@ -10,13 +10,14 @@ function Expenses(props){
     const filterExpenses = (filter)=>{
         let filteredExpenses = filter !=="All"? props.expenses.filter(expense => expense.date.getFullYear() === Number(filter)): props.expenses;
         updateExpenses(filteredExpenses)
+        props.onFilterExpenses(filteredExpenses)
     }
     
     //updating expenses on change to props est. in parent (new expense) vs new state received from child (filtered expense)
     React.useEffect(() => {
         updateExpenses(props.expenses);
     }, [props.expenses]);
-
+    //spb TODO: come back and finish this to receive a callback prop with the expenseItem instance that was edited -- consider cloning the original array on cb    
     let expenseList = expenses.map(expense =>
         <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} key={expense.id}/>
     )

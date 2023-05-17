@@ -32,6 +32,7 @@ function App() {
     },
   ];
   const [expensesList, updateExpenses] = useState(expenses);
+  const [filteredExpensesList, updateFilteredExpenses] = useState(expenses);
   const [showNewExpense, updateShowNewExpense] = useState(true);
   const addExpenseHandler = (expenseEntry)=>{
     updateExpenses(prev=>[...prev, expenseEntry])
@@ -40,17 +41,19 @@ function App() {
   const show = (showExpenseForm)=>{
     updateShowNewExpense(showExpenseForm)
   }
-
+  const handleFilteredExpenses = (filteredExpenses)=>{
+    updateFilteredExpenses(filteredExpenses)
+  }
   return (
     <div>
     <h1 id='page-title'>Expense Tracker</h1>
-    <Chart expenses={expensesList}/>
+    <Chart expenses={filteredExpensesList}/>
     { 
       showNewExpense &&
       <NewExpense onAddExpense={addExpenseHandler} showExpenseForm={show}/>
     }
       <NewExpenseToggle onToggleExpenseForm={updateShowNewExpense} showAddExpense={showNewExpense}/>
-      <Expenses expenses={expensesList} onUpdateExpenses={updateExpenses} />
+      <Expenses expenses={expensesList} onFilterExpenses={handleFilteredExpenses} />
     </div>
   );
 }
