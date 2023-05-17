@@ -36,6 +36,7 @@ function App() {
   const [showNewExpense, updateShowNewExpense] = useState(true);
   const addExpenseHandler = (expenseEntry)=>{
     updateExpenses(prev=>[...prev, expenseEntry])
+    updateFilteredExpenses(prev=>[...prev, expenseEntry])
     console.log(expensesList)
   }
   const show = (showExpenseForm)=>{
